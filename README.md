@@ -1,5 +1,4 @@
-[![Build Status](https://travis-ci.org/yaonie084/koa2-vue2-wechat-enterprise.svg?branch=master)]
-(https://travis-ci.org/yaonie084/koa2-vue2-wechat-enterprise.svg?branch=master)
+[![Build Status](https://travis-ci.org/yaonie084/koa2-vue2-wechat-enterprise.svg?branch=master)](https://travis-ci.org/yaonie084/koa2-vue2-wechat-enterprise)
 
 # koa2-vue2-wechat-enterprise
 
