@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/yaonie084/koa2-vue2-wechat-enterprise.svg?branch=master)](https://travis-ci.org/yaonie084/koa2-vue2-wechat-enterprise)
 
+[![Coverage Status](https://coveralls.io/repos/github/yaonie084/koa2-vue2-wechat-enterprise/badge.svg?branch=master)](https://coveralls.io/github/yaonie084/koa2-vue2-wechat-enterprise?branch=master)
 # koa2-vue2-wechat-enterprise
 
 > 前后端分离的企业微信第三方应用种子项目，后端用的koa2，前端用的vue2
