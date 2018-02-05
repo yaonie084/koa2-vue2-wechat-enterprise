@@ -1,4 +1,5 @@
-[![Build Status](https://semaphoreci.com/api/v1/yaonie084/koa2-vue2-wechat-enterprise/branches/master/badge.svg)](https://semaphoreci.com/yaonie084/koa2-vue2-wechat-enterprise)
+[![Build Status](https://travis-ci.org/yaonie084/koa2-vue2-wechat-enterprise.svg?branch=master)]
+(https://travis-ci.org/yaonie084/koa2-vue2-wechat-enterprise.svg?branch=master)
 
 # koa2-vue2-wechat-enterprise
 
