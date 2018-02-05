@@ -3,4 +3,8 @@ node_js:
   - "8.0.0"
 install: npm install
 script:
+  - mv ./config/config.json.default ./config/config.json
   - npm run test
+cache:
+  directories:
+  - .node_modules
