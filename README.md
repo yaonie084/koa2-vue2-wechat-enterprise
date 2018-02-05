@@ -1,3 +1,5 @@
+[![Build Status](https://semaphoreci.com/api/v1/yaonie084/koa2-vue2-wechat-enterprise/branches/master/badge.svg)](https://semaphoreci.com/yaonie084/koa2-vue2-wechat-enterprise)
+
 # koa2-vue2-wechat-enterprise
 
 > 前后端分离的企业微信第三方应用种子项目，后端用的koa2，前端用的vue2
