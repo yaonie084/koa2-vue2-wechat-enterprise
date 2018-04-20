@@ -3,6 +3,7 @@ import axios from 'axios'
 export function fetch(url, method = 'GET', params) {
 
   // $.showPreloader();
+
   return new Promise((resolve, reject) => {
     axios({
       method: method,
