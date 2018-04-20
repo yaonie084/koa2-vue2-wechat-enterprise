@@ -5,13 +5,11 @@ import App from './App'
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 import router from './router'
-import VueQrcode from 'vue-qrcode'
 import api from './service/api'
 import './global'
 
 Vue.config.productionTip = false
 Vue.use(MintUI)
-Vue.component('qrcode', VueQrcode);
 
 router.beforeEach((to, from, next) => {
   // var vConsole = new VConsole();

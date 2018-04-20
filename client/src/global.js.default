@@ -23,3 +23,11 @@ global.wx_boilerplate_production2 = {
   TITLE: 'production2',
   ADDRESS: 'production2'
 }
+
+global.prodution = {
+  G_SERVER_URL: 'http://test2.funenc.com/',
+  AGENT_ID: '1000206',
+  CORP_ID: 'ww459483b92c637742',
+  TITLE: '测试种子项目',
+  ADDRESS: '成都地铁7号线中环停车场'
+}
