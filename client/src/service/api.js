@@ -34,7 +34,7 @@ export default {
 
     // 测试用的
     getHomeIndex(){
-      return fetch('/')
+      return fetch('api/')
     }
 
 }

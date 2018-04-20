@@ -2,7 +2,7 @@ const Wx = require('../lib/wx');
 const Crypto = require('crypto');
 const moment = require('moment');
 const env = process.env.NODE_ENV || 'development';
-const config = require(__dirname + '/../config/config.json')[env].project;
+const config = require(__dirname + '/../config/wx_config.js')[env];
 
 var getSha1 = function(str) {
   var sha1 = Crypto.createHash("sha1");//定义加密方式:md5不可逆,此处的md5可以换成任意hash加密的方法名称；
@@ -12,8 +12,10 @@ var getSha1 = function(str) {
 }
 
 exports.index = async (ctx, next) => {
+  console.log(require(__dirname + '/../config/config.js')[env]);
   ctx.body = {
-    foo: 'bar'
+    foo: require(__dirname + '/../config/config.js')[env],
+    env: env
   }
 }
 

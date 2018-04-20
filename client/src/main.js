@@ -23,33 +23,33 @@ router.beforeEach((to, from, next) => {
   }
 
   document.title = TITLE;
-  var wxid = localStorage.getItem('wxid');
-  // if(to.name == 'MyVisitors'){
-    if(true){
-      // 这里是判断哪些页面需要过免登流程
-      if(!wxid){
-        // 没有登录的情况则登录
-        if(to.query.code){
-          // 这是从微信redirect跳过来的情况
-          var code = to.query.code;
-          api.getUserInfo(code).then((res)=>{
-            localStorage.setItem('wxid', res.userInfo.userid);
-            localStorage.setItem('name', res.userInfo.name);
-            next();
-          });
+  // var wxid = localStorage.getItem('wxid');
+  // // if(to.name == 'MyVisitors'){
+  //   if(true){
+  //     // 这里是判断哪些页面需要过免登流程
+  //     if(!wxid){
+  //       // 没有登录的情况则登录
+  //       if(to.query.code){
+  //         // 这是从微信redirect跳过来的情况
+  //         var code = to.query.code;
+  //         api.getUserInfo(code).then((res)=>{
+  //           localStorage.setItem('wxid', res.userInfo.userid);
+  //           localStorage.setItem('name', res.userInfo.name);
+  //           next();
+  //         });
 
-        }else{
-          var redirectUrl = G_SERVER_URL + to.fullPath;
-          var url = `https://open.weixin.qq.com/connect/oauth2/authorize?appid=${CORP_ID}&redirect_uri=${redirectUrl}&response_type=code&scope=snsapi_userinfo&agentid=${AGENT_ID}&state=STATE123#wechat_redirect`
-          window.location.href = url;
-        }
-      }else{
-        console.log('已登录:', wxid);
-        next();
-      }
-    }else{
+  //       }else{
+  //         var redirectUrl = G_SERVER_URL + to.fullPath;
+  //         var url = `https://open.weixin.qq.com/connect/oauth2/authorize?appid=${CORP_ID}&redirect_uri=${redirectUrl}&response_type=code&scope=snsapi_userinfo&agentid=${AGENT_ID}&state=STATE123#wechat_redirect`
+  //         window.location.href = url;
+  //       }
+  //     }else{
+  //       console.log('已登录:', wxid);
+  //       next();
+  //     }
+  //   }else{
       next();
-    }
+  //   }
 });
 
 /* eslint-disable no-new */
