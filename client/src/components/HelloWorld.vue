@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>当前环境1: {{ env }}</h1>
+    <h1>当前环境2: {{ env }}</h1>
     <h2>Essential Links</h2>
     <ul>
       <li>
