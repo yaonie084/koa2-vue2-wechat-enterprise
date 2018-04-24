@@ -25,7 +25,7 @@ global.wx_boilerplate_production2 = {
 }
 
 global.production = {
-  G_SERVER_URL: 'http://test2.funenc.com/',
+  G_SERVER_URL: 'http://test1.funenc.com/',
   AGENT_ID: '1000206',
   CORP_ID: 'ww459483b92c637742',
   TITLE: '测试种子项目',
