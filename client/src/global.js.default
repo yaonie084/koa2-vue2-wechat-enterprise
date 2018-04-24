@@ -24,7 +24,7 @@ global.wx_boilerplate_production2 = {
   ADDRESS: 'production2'
 }
 
-global.prodution = {
+global.production = {
   G_SERVER_URL: 'http://test2.funenc.com/',
   AGENT_ID: '1000206',
   CORP_ID: 'ww459483b92c637742',
