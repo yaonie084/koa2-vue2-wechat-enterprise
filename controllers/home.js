@@ -11,6 +11,12 @@ var getSha1 = function(str) {
   return res;
 }
 
+exports.test = async (ctx, next) => {
+  ctx.body = {
+    foo: 'bar'
+  }
+}
+
 exports.index = async (ctx, next) => {
   console.log(require(__dirname + '/../config/config.js')[env]);
   ctx.body = {
