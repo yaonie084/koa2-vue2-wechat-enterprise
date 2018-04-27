@@ -4,7 +4,7 @@ const home = require('../controllers/home');
 /**
  * 测试路由
  */
-router.get('/test', home.test);
+router.get('/api/test', home.test);
 /**
  * api路由
  */

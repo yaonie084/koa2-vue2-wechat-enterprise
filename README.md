@@ -50,3 +50,11 @@ NODE_ENV=company2_production npm run build
 
 ##todo
 通过环境变量来加载assets目录
+
+## 代码贡献流程
+
+1. Fork这个项目
+2. 创建你的feature分支 (`git checkout -b my-new-feature`)
+3. Commit更改 (`git commit -am 'Add some feature'`)
+4. Push到这个分支 (`git push origin my-new-feature`)
+5. 新建Pull Request
