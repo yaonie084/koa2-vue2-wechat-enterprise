@@ -20,7 +20,7 @@ describe("Index", function() {
   }));
 
   it("should return the string 'bar'", function(done) {
-    request.get("/")
+    request.get("/test")
     .expect(200)
     .end(function(err, res){
       if (err) { return done(err); }
