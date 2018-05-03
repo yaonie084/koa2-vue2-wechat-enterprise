@@ -1,21 +1,18 @@
-# src2
-
-> A Vue.js project
-
-## Build Setup
+## 前端Run Setup
 
 ``` bash
-# install dependencies
-npm install
+# 安装依赖
+cnpm install
 
-# serve with hot reload at localhost:8080
+# 修改后端配置文件,将所有需要的全局变量都填里面
+src/src/global.js
+
+# 运行开发环境
 npm run dev
 
-# build for production with minification
-npm run build
+# 运行前端第一个生产环境
+NODE_ENV=company1_production npm run build
 
-# build for production and view the bundle analyzer report
-npm run build --report
+# 运行前端第二个生成环境
+NODE_ENV=company2_production npm run build
 ```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
