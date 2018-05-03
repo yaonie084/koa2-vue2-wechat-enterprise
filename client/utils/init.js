@@ -3,6 +3,7 @@ const exec = require('child_process').exec;
 const request = require('request');
 const fs = require('fs');
 const source = 'https://raw.githubusercontent.com/chouchou900822/template/master';
+const colors = require('colors');
 
 String.prototype.firstUp = function() {
   return this.substring(0, 1).toUpperCase() + this.substring(1);
@@ -73,6 +74,8 @@ async function get(url) {
   exec(`echo "${envFileContent}" > .env.development`, function (error, stdout, stderr) {
     if (error !== null) {
       console.log('exec error: ' + error);
+    } else {
+      console.log('项目搭建成功...'.green);
     }
   });
 })();
