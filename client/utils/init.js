@@ -2,14 +2,29 @@ const prompts = require('prompts');
 const exec = require('child_process').exec;
 const request = require('request');
 const fs = require('fs');
+const source = 'https://raw.githubusercontent.com/chouchou900822/template/master';
 
+String.prototype.firstUp = function() {
+  return this.substring(0, 1).toUpperCase() + this.substring(1);
+}
 async function downloadFile(uri, filename) {
   return new Promise(function (resolve) {
     let stream = fs.createWriteStream(filename);
     request(uri).pipe(stream).on('close', resolve());
   });
 }
-
+async function get(url) {
+  let host = 'http://service.funenc.com/api'
+  return new Promise(function (resolve, reject) {
+    request(encodeURI(host + url), function (error, response, body) {
+      if (error) {
+        reject(error)
+      } else {
+        resolve(JSON.parse(response.body));
+      }
+    });
+  });
+}
 (async function () {
   let questions = [{
     message: '选择你的项目类型',
@@ -43,63 +58,17 @@ async function downloadFile(uri, filename) {
     type: 'text',
     name: 'host',
     message: `请输入服务端host`
-  }, {
-    type: 'text',
-    name: 'corpId',
-    message: `请输入corpId`
-  }, {
-    type: 'text',
-    name: 'agentId',
-    message: `请输入agentId`
   }];
-  let vueContent = '';
-  if (response.corp == 'wx' && response.login == 'web') {
-    inputs.push({
-      type: 'text',
-      name: 'redirectUri',
-      message: `请输入免登redirect_uri`
-    });
-    await downloadFile(`http://onx1jjc4v.bkt.clouddn.com/wxWeb.vue?v=${Math.random()}`, './src/App.vue');
-  }
-  if (response.corp == 'wx' && response.login == 'scan') {
-    inputs.push({
-      type: 'text',
-      name: 'scanUri',
-      message: `请输入扫码redirect_uri`
-    });
-    await downloadFile(`http://onx1jjc4v.bkt.clouddn.com/wxScan.vue?v=${Math.random()}`, './src/App.vue');
-  }
-  if (response.corp == 'dd' && response.login == 'web') {
-    await downloadFile(`http://onx1jjc4v.bkt.clouddn.com/ddWeb.vue?v=${Math.random()}`, './src/App.vue');
-  }
-  if (response.corp == 'dd' && response.login == 'scan') {
-    inputs = [{
-      type: 'text',
-      name: 'userid',
-      message: `请输入userid`
-    }, {
-      type: 'text',
-      name: 'appName',
-      message: `请输入appName`
-    }, {
-      type: 'text',
-      name: 'host',
-      message: `请输入服务端host`
-    }, {
-      type: 'text',
-      name: 'appId',
-      message: `请输入扫码appId`
-    }, {
-      type: 'text',
-      name: 'scanUri',
-      message: `请输入扫码redirect_uri`
-    }];
-    await downloadFile(`http://onx1jjc4v.bkt.clouddn.com/ddScan.vue?v=${Math.random()}`, './src/App.vue');
-  }
+
   const envResponse = await prompts(inputs);
+  downloadFile(`${source}/${response.corp}${response.login.firstUp()}.vue?v=${Math.random()}`, './src/App.vue');
+  let serviceRes = await get(`/admins/info?corp=${response.corp}&login=${response.login}&userid=${envResponse.userid}&appName=${envResponse.appName}`);
   let envFileContent = '';
   for (let key in envResponse) {
     envFileContent += `VUE_APP_${key}=${envResponse[key]}\n`;
+  }
+  for (let key in serviceRes) {
+    envFileContent += `VUE_APP_${key}=${serviceRes[key]}\n`;
   }
   exec(`echo "${envFileContent}" > .env.development`, function (error, stdout, stderr) {
     if (error !== null) {

@@ -31,25 +31,22 @@ NODE_ENV=company2_production nodemon bin/www
 
 ## 前端Run Setup
 
+### [富能通服务平台](http://service.funenc.com/)
 ``` bash
-# 安装依赖
-cnpm install
+# 进入client目录初始化
+npm run init
+选择完免登授权类型之后填写对应的参数
+参数在富能通服务平台上
 
-# 修改后端配置文件,将所有需要的全局变量都填里面
-src/src/global.js
-
-# 运行开发环境
+# development环境
 npm run dev
+环境变量在 .env.development文件
 
-# 运行前端第一个生产环境
-NODE_ENV=company1_production npm run build
-
-# 运行前端第二个生成环境
-NODE_ENV=company2_production npm run build
+# production环境
+npm run build
+环境变量在 .env.production文件
 ```
 
-##todo
-通过环境变量来加载assets目录
 
 ## 代码贡献流程
 
