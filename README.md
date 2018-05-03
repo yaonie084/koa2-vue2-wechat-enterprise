@@ -32,19 +32,20 @@ NODE_ENV=company2_production nodemon bin/www
 ## 前端Run Setup
 
 ### [富能通服务平台](http://service.funenc.com/)
+
 ``` bash
 # 进入client目录初始化
+# 选择完免登授权类型之后填写对应的参数
+# 参数在富能通服务平台上
 npm run init
-选择完免登授权类型之后填写对应的参数
-参数在富能通服务平台上
 
 # development环境
+# 环境变量在 .env.development文件
 npm run dev
-环境变量在 .env.development文件
 
 # production环境
+# 环境变量在 .env.production文件
 npm run build
-环境变量在 .env.production文件
 ```
 
 
