@@ -14,5 +14,6 @@ router.get('/funenc/wx/get-user-info', funenc.wxGetUserInfo);
 router.get('/funenc/wx/scan-get-user-info', funenc.wxScanGetUserInfo);
 router.get('/funenc/dd/get-user-info', funenc.ddGetUserInfo);
 router.get('/funenc/dd/scan-get-user-info', funenc.ddScanGetUserInfo);
+router.get('/funenc/dd/sign', funenc.ddSign);
 
 module.exports = router;

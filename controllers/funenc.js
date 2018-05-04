@@ -52,3 +52,12 @@ exports.ddScanGetUserInfo = async (ctx, next) => {
     user: user
   }
 }
+
+exports.ddSign = async (ctx, next) => {
+  let query = ctx.query;
+  query.signedUrl = ctx.header.origin;
+  let configJson = await invoke('GET', 'http://service.funenc.com/api/dingding/sign', query);
+  ctx.body = {
+    config: configJson.config
+  }
+}
