@@ -4,10 +4,25 @@ const request = require('request');
 const fs = require('fs');
 const source = 'https://raw.githubusercontent.com/chouchou900822/template/master';
 const colors = require('colors');
+const os = require('os');
 
 String.prototype.firstUp = function() {
   return this.substring(0, 1).toUpperCase() + this.substring(1);
 }
+
+function getIPAdress() {
+  var interfaces = os.networkInterfaces();
+  for (var devName in interfaces) {
+    var iface = interfaces[devName];
+    for (var i = 0; i < iface.length; i++) {
+      var alias = iface[i];
+      if (alias.family === 'IPv4' && alias.address !== '127.0.0.1' && !alias.internal) {
+        return alias.address;
+      }
+    }
+  }
+}
+
 async function downloadFile(uri, filename) {
   return new Promise(function (resolve) {
     let stream = fs.createWriteStream(filename);
@@ -55,13 +70,11 @@ async function get(url) {
     type: 'text',
     name: 'appName',
     message: `请输入appName`
-  }, {
-    type: 'text',
-    name: 'host',
-    message: `请输入服务端host`
   }];
 
   const envResponse = await prompts(inputs);
+  let ip = getIPAdress();
+  envResponse.host = `http://${ip}:3000`;
   downloadFile(`${source}/${response.corp}${response.login.firstUp()}.vue?v=${Math.random()}`, './src/App.vue');
   let serviceRes = await get(`/admins/info?corp=${response.corp}&login=${response.login}&userid=${envResponse.userid}&appName=${envResponse.appName}`);
   let envFileContent = '';
