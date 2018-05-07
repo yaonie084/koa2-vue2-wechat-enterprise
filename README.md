@@ -31,22 +31,28 @@ NODE_ENV=company2_production nodemon bin/www
 
 ## 前端Run Setup
 
+### [富能通服务平台](http://service.funenc.com/)
+
 ``` bash
-# 安装依赖
-cnpm install
+# 进入client目录初始化
+# 选择完免登授权类型之后填写对应的参数
+# 参数在富能通服务平台上
+npm run init
 
-# 修改后端配置文件,将所有需要的全局变量都填里面
-src/src/global.js
-
-# 运行开发环境
+# development环境
+# 环境变量在 .env.development文件
 npm run dev
 
-# 运行前端第一个生产环境
-NODE_ENV=company1_production npm run build
-
-# 运行前端第二个生成环境
-NODE_ENV=company2_production npm run build
+# production环境
+# 环境变量在 .env.production文件
+npm run build
 ```
 
-##todo
-通过环境变量来加载assets目录
+
+## 代码贡献流程
+
+1. Fork这个项目
+2. 创建你的feature分支 (`git checkout -b my-new-feature`)
+3. Commit更改 (`git commit -am 'Add some feature'`)
+4. Push到这个分支 (`git push origin my-new-feature`)
+5. 新建Pull Request
