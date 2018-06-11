@@ -7,7 +7,23 @@
     "start": "nodemon bin/www",
     "dev": "./node_modules/.bin/nodemon bin/www",
     "prd": "pm2 start bin/www",
-    "test": "NODE_ENV=test ./node_modules/.bin/mocha --harmony --reporter spec ./test/test-*.js --exit"
+    "test": "NODE_ENV=test ./node_modules/.bin/jest --runInBand --notify --no-cache --silent"
+  },
+  "jest": {
+    "verbose": true,
+    "coverageDirectory": "coverage",
+    "collectCoverage": true,
+    "coverageReporters": [
+      "lcov",
+      "text"
+    ],
+    "collectCoverageFrom": [
+      "controllers/*.js",
+      "models/*.js",
+      "lib/*.js",
+      "routes/*js",
+      "!models/index.js"
+    ]
   },
   "repository": {
     "type": "git",
@@ -47,6 +63,8 @@
     "then-redis": "^2.0.1"
   },
   "devDependencies": {
+    "cross-env": "^5.1.6",
+    "jest": "^23.1.0",
     "nodemon": "^1.8.1"
   }
 }

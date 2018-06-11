@@ -91,3 +91,4 @@ function onListening() {
 }
 
 exports.app = app;
+exports.server = server;

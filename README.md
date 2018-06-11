@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/yaonie084/koa2-vue2-wechat-enterprise.svg?branch=master)](https://travis-ci.org/yaonie084/koa2-vue2-wechat-enterprise)
+[![Build Status](https://travis-ci.org/yaonie084/map-limit.svg?branch=master)](https://travis-ci.org/yaonie084/map-limit)
 
 # koa2-vue2-wechat-enterprise
 

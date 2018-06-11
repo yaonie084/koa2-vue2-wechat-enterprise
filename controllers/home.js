@@ -12,7 +12,7 @@ var getSha1 = function(str) {
 }
 
 exports.index = async (ctx, next) => {
-  console.log(require(__dirname + '/../config/config.js')[env]);
+  // console.log(require(__dirname + '/../config/config.js')[env]);
   ctx.body = {
     foo: require(__dirname + '/../config/config.js')[env],
     env: env
@@ -26,7 +26,7 @@ exports.auth = async (ctx, next) => {
   var noncestr = 'asdGfuoaSheh3322';
   var timestamp = moment().unix() + '';
   //todo: 这里是首页，应该是获取header的origin做url
-  console.log(ctx.headers);
+  // console.log(ctx.headers);
   var url = config.host;
   var string = `jsapi_ticket=${ticket}&noncestr=${noncestr}&timestamp=${timestamp}&url=${url}`
 
@@ -40,10 +40,7 @@ exports.auth = async (ctx, next) => {
 
 exports.getUserInfo = async (ctx, next) => {
   var userInfo = await Wx.getUserInfo(ctx.query.code);
-  console.log(userInfo);
   var department = await Wx.getDepartmentById(userInfo.department[0]);
-  console.log(department);
-  console.log(department.department[0].name);
   ctx.body = {
     userInfo: userInfo,
     department: department.department[0].name
