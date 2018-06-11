@@ -15,7 +15,8 @@
     "collectCoverage": true,
     "coverageReporters": [
       "lcov",
-      "text"
+      "text",
+      "coveralls"
     ],
     "collectCoverageFrom": [
       "controllers/*.js",
@@ -63,6 +64,7 @@
     "then-redis": "^2.0.1"
   },
   "devDependencies": {
+    "coveralls": "^3.0.1",
     "cross-env": "^5.1.6",
     "jest": "^23.1.0",
     "nodemon": "^1.8.1"
