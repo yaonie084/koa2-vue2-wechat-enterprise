@@ -7,7 +7,8 @@
     "start": "nodemon bin/www",
     "dev": "./node_modules/.bin/nodemon bin/www",
     "prd": "pm2 start bin/www",
-    "test": "NODE_ENV=test ./node_modules/.bin/jest --runInBand --notify --no-cache --silent --watch --coverage"
+    "test": "NODE_ENV=test ./node_modules/.bin/jest --runInBand --notify --no-cache --silent --watch --coverage",
+    "coveralls": "cat ./coverage/lcov/lcov.info | ./node_modules/.bin/coveralls"
   },
   "jest": {
     "verbose": true,
