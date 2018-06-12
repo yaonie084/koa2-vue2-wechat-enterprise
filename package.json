@@ -7,7 +7,7 @@
     "start": "nodemon bin/www",
     "dev": "./node_modules/.bin/nodemon bin/www",
     "prd": "pm2 start bin/www",
-    "test": "NODE_ENV=test ./node_modules/.bin/jest --runInBand --notify --no-cache --silent"
+    "test": "NODE_ENV=test ./node_modules/.bin/jest --runInBand --notify --no-cache --silent --watch --coverage"
   },
   "jest": {
     "verbose": true,
@@ -15,8 +15,7 @@
     "collectCoverage": true,
     "coverageReporters": [
       "lcov",
-      "text",
-      "coveralls"
+      "text"
     ],
     "collectCoverageFrom": [
       "controllers/*.js",
