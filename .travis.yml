@@ -6,7 +6,7 @@ before_install:
 install: npm install
 script:
   - mv ./config/config.json.default ./config/config.json
-  - NODE_ENV=test ./node_modules/.bin/jest --runInBand --notify --no-cache --silent --coverage --forceExit
+  - NODE_ENV=test ./node_modules/.bin/jest --coverage
 cache:
   directories:
   - .node_modules
