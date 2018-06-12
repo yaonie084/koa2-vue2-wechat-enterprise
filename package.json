@@ -14,10 +14,6 @@
     "verbose": true,
     "coverageDirectory": "coverage",
     "collectCoverage": true,
-    "coverageReporters": [
-      "lcov",
-      "text"
-    ],
     "collectCoverageFrom": [
       "controllers/*.js",
       "models/*.js",
