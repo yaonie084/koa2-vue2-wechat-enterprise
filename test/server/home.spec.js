@@ -1,14 +1,13 @@
 "use strict";
 var db = require("../../models");
 var should = require("should");
-var app;
-// var request = require("supertest").agent(app.listen());
-var request;
+var app = require("../../bin/www").server;
+var request = require("supertest").agent(app);
 
 jest.mock("../../lib/wx");
 const Wx = require("../../lib/wx");
 
-var sleep = function(time){
+var sleep = function (time) {
   return new Promise(function (resolve) {
     setTimeout(function () {
       resolve("ok");
@@ -16,15 +15,13 @@ var sleep = function(time){
   });
 }
 
-afterAll((done) => {
+afterAll(() => {
   console.log('finish');
-  app.close(done) // 当所有测试都跑完了之后，关闭server
+  app.close() // 当所有测试都跑完了之后，关闭server
   // process.exit();
 })
 
-beforeAll(()=>{
-  app = require("../../bin/www").server;
-  request = require("supertest")(app);
+beforeEach(() => {
   // console.log('begin');
 })
 
