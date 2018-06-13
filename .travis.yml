@@ -6,11 +6,9 @@ before_install:
 install: npm install
 script:
   - mv ./config/config.json.default ./config/config.json
-jobs:
-  include:
-    - stage: Produce Coverage
-      node_js: node
-      script: NODE_ENV=test ./node_modules/.bin/jest --coverage --forceExit && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
+  - NODE_ENV=test ./node_modules/.bin/jest --coverage --forceExit
+after_script:
+    - npm run coveralls
 cache:
   directories:
   - .node_modules
