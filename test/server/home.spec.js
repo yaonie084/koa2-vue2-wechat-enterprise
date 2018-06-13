@@ -26,7 +26,7 @@ beforeEach(()=>{
 })
 
 describe('test index', () => {
-  test("should return the string 'test'", async () => {
+  it("should return the string 'test'", async () => {
     const response = await request
       .get('/api')
       .expect(200)
@@ -36,7 +36,7 @@ describe('test index', () => {
 });
 
 describe('test getUserInfo', () => {
-  test("should return development", async () => {
+  it("should return development", async () => {
 
     Wx.getUserInfo.mockImplementation(params => {
       return {
@@ -67,7 +67,7 @@ describe('test getUserInfo', () => {
 
 describe('test auth', () => {
 
-  test("should return a hash", async () => {
+  it("should return a hash", async () => {
 
     Wx.getUserInfo.mockImplementation(() => {
       return 'mock token'

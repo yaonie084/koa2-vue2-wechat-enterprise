@@ -15,8 +15,7 @@
     "collectCoverage": true,
     "coverageReporters": [
       "lcov",
-      "text",
-      "coveralls"
+      "text"
     ],
     "collectCoverageFrom": [
       "controllers/*.js",
