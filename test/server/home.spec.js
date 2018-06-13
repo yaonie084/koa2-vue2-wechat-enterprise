@@ -2,12 +2,12 @@
 var db = require("../../models");
 var should = require("should");
 var app = require("../../bin/www").server;
-var request = require("supertest").agent(app.listen());
+var request = require("supertest").agent(app);
 
 jest.mock("../../lib/wx");
 const Wx = require("../../lib/wx");
 
-var sleep = function(time){
+var sleep = function (time) {
   return new Promise(function (resolve) {
     setTimeout(function () {
       resolve("ok");
@@ -21,7 +21,7 @@ afterAll(() => {
   // process.exit();
 })
 
-beforeEach(()=>{
+beforeEach(() => {
   // console.log('begin');
 })
 
